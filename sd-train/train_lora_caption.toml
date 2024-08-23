@@ -1,0 +1,11 @@
+[general]
+enable_bucket = true                        # 是否使用Aspect Ratio Bucketing
+
+[[datasets]]
+resolution = 512                            # 训练分辨率
+batch_size = 4                              # 批次大小
+
+  [[datasets.subsets]]
+  image_dir = '/code/train-1'                     # 指定包含训练图像的文件夹
+  caption_extension = '.caption'            # 若使用txt文件,更改此项
+  num_repeats = 100                          # 训练图像的重复次数

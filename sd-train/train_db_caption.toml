@@ -1,0 +1,17 @@
+[general]
+enable_bucket = true                        # 是否使用Aspect Ratio Bucketing
+
+[[datasets]]
+resolution = 512                            # 训练分辨率
+batch_size = 4                              # 批次大小
+
+  [[datasets.subsets]]
+  image_dir = '/code/train-2'                     # 指定包含训练图像的文件夹
+  caption_extension = '.caption'            # 若使用txt文件,更改此项
+  num_repeats = 35                          # 训练图像的重复次数
+  # 以下仅在使用正则化图像时进行描述。不使用则删除
+  [[datasets.subsets]]
+  is_reg = true
+  image_dir = '/code/train-2-reg'                      # 指定包含正则化图像的文件夹
+  class_tokens = "bikini, white background"                    # 指定class
+  num_repeats = 1                           # 正则化图像的重复次数，基本上1就可以了
